@@ -13,6 +13,8 @@ export default function Home() {
 
           <Link className="flex justify-center" href="/hub">
               <button onClick={() => {
+                localStorage.clear();
+
                 const name = document.getElementById("name") as HTMLInputElement;
                 localStorage.setItem("name", name?.value);
               }} className="border-2 border-blacklight hover:bg-blacklight hover:text-white hover:text-[15px] p-2 rounded-lg m-3 transition-all">Submit</button>
