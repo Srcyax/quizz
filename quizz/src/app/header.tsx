@@ -10,7 +10,7 @@ function Header(){
     return (
         <header className="flex flex-row justify-between m-5 h-11">
             <Link href="/">
-                <h1 className="text-2xl hover:text-gray-800 transition-colors duration-200">Quizz</h1>
+                <h1 className="text-2xl hover:text-zinc-600 transition-colors duration-200">Quizz</h1>
             </Link>
             <div className="group flex flex-col justify-center items-center">
                 <button className="transition-all duration-200 ease-in-outtext-white" onClick={() => {
