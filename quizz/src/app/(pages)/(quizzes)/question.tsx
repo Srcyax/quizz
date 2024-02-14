@@ -54,7 +54,6 @@ export default function Questions({ questions }: QuestionProps) {
                     {questions[currentQuestionIndex]?.answers.map((answer, index) => (
                         <button
                             key={index}
-                            id={"btn"}
                             className={`bg-zinc-900 text-white w-96 p-5 hover:p-6 m-3 rounded-lg text-left transition-all duration-200 ${selectedAnswerIndex === index && questions[currentQuestionIndex].correctAnswer === answer ? 'bg-green-500' : ''} ${selectedAnswerIndex === index && questions[currentQuestionIndex].correctAnswer !== answer ? 'bg-red-500' : ''}`}
                             onClick={() => handleAnswer(answer, index)}
                         >
