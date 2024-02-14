@@ -23,6 +23,36 @@ export default function Math(){
             question: "Two guards are sitting in a tower. One looks north, and the other looks south. They can see each other. How is this possible?",
             answers: ["The tower is rectangular", "The tower is triangular", "The tower is round", "The tower is square"],
             correctAnswer: "The tower is round"
+        },
+        {
+            question: "If two's company and three's a crowd, what are four and five?",
+            answers: ["Seven", "Nine", "Eleven", "Thirteen"],
+            correctAnswer: "Nine"
+        },
+        {
+            question: "What has keys but can't open locks?",
+            answers: ["A piano", "A computer keyboard", "A book", "A map"],
+            correctAnswer: "A piano"
+        },
+        {
+            question: "I am an odd number. Take away a letter and I become even. What number am I?",
+            answers: ["Three", "Five", "Seven", "Nine"],
+            correctAnswer: "Seven"
+        },
+        {
+            question: "What has a head, a tail, is brown, and has no legs?",
+            answers: ["A coin", "A horse", "A dog", "A tree"],
+            correctAnswer: "A coin"
+        },
+        {
+            question: "If you have me, you want to share me. If you share me, you haven't got me. What am I?",
+            answers: ["A secret", "Money", "Happiness", "A cake"],
+            correctAnswer: "A secret"
+        },
+        {
+            question: "What comes once in a minute, twice in a moment, but never in a thousand years?",
+            answers: ["The letter 'm'", "The number '1'", "A heartbeat", "A breath"],
+            correctAnswer: "The letter 'm'"
         }
     ]
 
