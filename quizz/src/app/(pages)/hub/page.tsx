@@ -8,6 +8,9 @@ export default function Hub(){
     const [name, getName] = useState("");
 
     useEffect(() =>{
+        axios.post("http://localhost:3001/resetanswers", {
+            answers_value: 0
+        })
         getName(localStorage.getItem("name") + "");
     }) 
 
@@ -21,6 +24,8 @@ export default function Hub(){
                     title="Capitals of countries" quizzPage="/CaptalOfCountries"/>
                     <QuizzCard image="https://cdn-icons-png.flaticon.com/512/746/746960.png"
                     title="Math riddles" quizzPage="/MathRiddles"/>
+                    <QuizzCard image="https://cdn-icons-png.flaticon.com/512/11485/11485423.png"
+                    title="Science and technology" quizzPage="/Sciencetechnology"/>
                 </div>
             </div>
         </main>
