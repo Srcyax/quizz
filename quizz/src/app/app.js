@@ -12,8 +12,12 @@ app.listen(3001, () =>{
     console.log("server running");
 })
 
-app.get("/resetanswers", (req, res) => {
-    right_answers = 0;
+app.get("/rightanswers", (req, res) => {
+    res.send(right_answers.toString());
+})
+
+app.post("/resetanswers", (req, res) => {
+    right_answers = req.body.answers_value;
 })
 
 app.post("/quizzes", (req, res) => {

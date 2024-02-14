@@ -25,9 +25,8 @@ export default function Questions({ questions }: QuestionProps) {
             if (currentQuestionIndex < questions.length - 1) {
                 setCurrentQuestionIndex(currentQuestionIndex + 1);
             } else {
-                console.log("Parabéns! Você respondeu todas as perguntas.");
                 setCurrentQuestionIndex(-1);
-                router.push('/hub')
+                router.push('/QuizzResult')
             }
         });
     };
@@ -36,7 +35,7 @@ export default function Questions({ questions }: QuestionProps) {
         <main>
             {currentQuestionIndex < questions.length && (
                 <div className="flex flex-col justify-center items-center">
-                    <h1 className="text-3xl mt-3 mb-11">{questions[currentQuestionIndex]?.question}</h1>
+                    <h1 className="text-3xl text-center w-2/4 mt-3 mb-11">{questions[currentQuestionIndex]?.question}</h1>
                     {questions[currentQuestionIndex]?.answers.map((answer, index) => (
                         <button
                             key={index}
