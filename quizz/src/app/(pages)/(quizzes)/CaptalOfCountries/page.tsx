@@ -1,6 +1,6 @@
 "use client"
 
-import CapitalsQuestion from "./question"
+import Questions from "../question"
 
 export default function Capitals(){
     const questions = [
@@ -23,7 +23,7 @@ export default function Capitals(){
 
     return (
         <main className="flex flex-col justify-center items-center">      
-            <CapitalsQuestion questions={questions}/>      
+            <Questions questions={questions}/>      
         </main>
     )
 }

@@ -8,11 +8,11 @@ interface Question {
     correctAnswer: string;
 }
 
-interface CapitalsProps {
+interface QuestionProps {
     questions: Question[];
 }
 
-export default function CapitalsQuestion({ questions }: CapitalsProps) {
+export default function Questions({ questions }: QuestionProps) {
     const router = useRouter()
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
@@ -33,9 +33,9 @@ export default function CapitalsQuestion({ questions }: CapitalsProps) {
     };
 
     return (
-        <main className="flex flex-col justify-center items-center">
+        <main>
             {currentQuestionIndex < questions.length && (
-                <div>
+                <div className="flex flex-col justify-center items-center">
                     <h1 className="text-3xl mt-3 mb-11">{questions[currentQuestionIndex]?.question}</h1>
                     {questions[currentQuestionIndex]?.answers.map((answer, index) => (
                         <button
