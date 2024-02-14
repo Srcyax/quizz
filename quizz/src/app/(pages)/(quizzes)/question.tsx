@@ -35,11 +35,11 @@ export default function Questions({ questions }: QuestionProps) {
         <main>
             {currentQuestionIndex < questions.length && (
                 <div className="flex flex-col justify-center items-center">
-                    <h1 className="text-3xl text-center w-2/4 mt-3 mb-11">{questions[currentQuestionIndex]?.question}</h1>
+                    <h1 className="text-3xl text-center w-3/4 mt-3 mb-11">{questions[currentQuestionIndex]?.question}</h1>
                     {questions[currentQuestionIndex]?.answers.map((answer, index) => (
                         <button
                             key={index}
-                            className="bg-black dark:bg-zinc-900 w-96 p-5 hover:p-6 m-3 rounded-lg text-left transition-all duration-200"
+                            className="bg-black text-white dark:bg-zinc-900 w-96 p-5 hover:p-6 m-3 rounded-lg text-left transition-all duration-200"
                             onClick={() => handleAnswer(answer)}
                         >
                             {answer}

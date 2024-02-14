@@ -57,8 +57,9 @@ export default function Math(){
     ]
 
     return (
-        <main className="flex flex-col justify-center items-center">      
-            <Questions questions={questions}/>      
+        <main className="relative text-center"> 
+            <Questions questions={questions}/>  
+            <img className="absolute w-screen h-screen -top-20 left-auto blur-[2px] opacity-50 -z-10" src="https://clipart-library.com/images_k/math-transparent-background/math-transparent-background-6.png" alt="" />    
         </main>
     )
 }

@@ -57,8 +57,9 @@ export default function Capitals(){
     ]
 
     return (
-        <main className="flex flex-col justify-center items-center">      
-            <Questions questions={questions}/>      
+        <main className="relative text-center"> 
+             <Questions questions={questions}/>  
+             <img className="absolute w-screen h-screen top-0 left-auto blur-md opacity-50 -z-10" src="https://pngimg.com/d/world_map_PNG2.png" alt="" />    
         </main>
     )
 }
