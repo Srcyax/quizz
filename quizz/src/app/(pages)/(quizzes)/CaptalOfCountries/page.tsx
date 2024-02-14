@@ -1,6 +1,7 @@
 "use client"
 
 import Questions from "../question"
+import Image from 'next/image'
 
 export default function Capitals(){
     const questions = [
