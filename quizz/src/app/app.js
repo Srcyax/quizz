@@ -23,7 +23,7 @@ app.post("/resetanswers", (req, res) => {
 app.post("/quizzes", (req, res) => {
     if (req.body.answered === req.body.answer){
         right_answers += 1;
-        res.send("correct: " + right_answers);
+        res.send("correct");
     }
     else{
         res.send("incorrect");
