@@ -9,132 +9,162 @@ export default function Math(){
 
     const questions = [
         {
-            question: "There is a duck between two ducks, a duck behind a duck, and a duck in front of another duck. How many ducks are we talking about?",
-            answers: ["4 ducks", "3 ducks", "2 ducks", "5 ducks"],
-            correctAnswer: "3 ducks"
-        },
-        {
-            question: "When I was 8 years old, my sister was half my age. Now that I'm 55, how old is my sister?",
-            answers: ["51 years old", "52 years old", "49 years old", "45 years old"],
-            correctAnswer: "51 years old"
-        },
-        {
-            question: "I have a hidden treasure in my house. If I divide my father's age by 2 and add 5, and then multiply by 3, resulting in 39. How old is my father?",
-            answers: ["37 years", "39 years", "41 years", "43 years"],
-            correctAnswer: "41 years"
-        },
-        {
-            question: "Two guards are sitting in a tower. One looks north, and the other looks south. They can see each other. How is this possible?",
-            answers: ["The tower is rectangular", "The tower is triangular", "The tower is round", "The tower is square"],
-            correctAnswer: "The tower is round"
-        },
-        {
-            question: "If two's company and three's a crowd, what are four and five?",
-            answers: ["Seven", "Nine", "Eleven", "Thirteen"],
-            correctAnswer: "Nine"
-        },
-        {
-            question: "What has keys but can't open locks?",
-            answers: ["A piano", "A computer keyboard", "A book", "A map"],
-            correctAnswer: "A piano"
-        },
-        {
-            question: "I am an odd number. Take away a letter and I become even. What number am I?",
-            answers: ["Three", "Five", "Seven", "Nine"],
-            correctAnswer: "Seven"
-        },
-        {
-            question: "What has a head, a tail, is brown, and has no legs?",
-            answers: ["A coin", "A horse", "A dog", "A tree"],
-            correctAnswer: "A coin"
-        },
-        {
-            question: "If you have me, you want to share me. If you share me, you haven't got me. What am I?",
-            answers: ["A secret", "Money", "Happiness", "A cake"],
-            correctAnswer: "A secret"
-        },
-        {
-            question: "What comes once in a minute, twice in a moment, but never in a thousand years?",
-            answers: ["The letter 'm'", "The number '1'", "A heartbeat", "A breath"],
-            correctAnswer: "The letter 'm'"
-        },
-        {
-            question: "If you multiply me by any other number, the answer will always be the same. What number am I?",
-            answers: ["One", "Zero", "Two", "Ten"],
-            correctAnswer: "Zero"
-        },
-        {
-            question: "I am an odd number. Take away a letter and I become even. What number am I?",
-            answers: ["Three", "Five", "Seven", "Nine"],
-            correctAnswer: "Seven"
-        },
-        {
-            question: "I have three apples. If you take away two from me, how many apples do you have?",
-            answers: ["One", "Two", "Three", "None"],
+            question: "If you have three oranges and you take away two, how many will you have?",
+            answers: ["Two", "Three", "One", "None"],
             correctAnswer: "Two"
         },
         {
-            question: "What number when added to its half equals 60?",
-            answers: ["40", "50", "30", "20"],
-            correctAnswer: "40"
-        },
-        {
             question: "I am an odd number. Take away one letter and I become even. What number am I?",
-            answers: ["Seven", "Five", "Three", "Nine"],
+            answers: ["Seven", "Thirteen", "Nine", "Five"],
             correctAnswer: "Seven"
         },
         {
-            question: "How can you make the number seven even without addition or subtraction?",
-            answers: ["Double it", "Divide it by 2", "Round it up", "Round it down"],
-            correctAnswer: "Double it"
+            question: "What comes once in a minute, twice in a moment, but never in a thousand years?",
+            answers: ["Letter 'M'", "Number '2'", "Vowel 'E'", "Time"],
+            correctAnswer: "Letter 'M'"
         },
         {
-            question: "What mathematical symbol can be placed between 5 and 9 to get a number bigger than 5 and smaller than 9?",
-            answers: [">", "<", "=", "+"],
-            correctAnswer: "<"
+            question: "What has a head, a tail, is brown, and has no legs?",
+            answers: ["Penny", "Snake", "Bear", "Dog"],
+            correctAnswer: "Penny"
         },
         {
-            question: "What three positive numbers give the same result when multiplied and added together?",
-            answers: ["1, 2, 3", "2, 3, 4", "3, 4, 5", "1, 3, 5"],
-            correctAnswer: "1, 2, 3"
+            question: "What has keys but can't open locks?",
+            answers: ["Keyboard", "Piano", "Map", "Calculator"],
+            correctAnswer: "Piano"
         },
         {
-            question: "If a hen and a half can lay an egg and a half in a day and a half, how many eggs can a hen lay in three days?",
-            answers: ["3 eggs", "4 eggs", "5 eggs", "6 eggs"],
-            correctAnswer: "3 eggs"
+            question: "What has a neck but no head?",
+            answers: ["Bottle", "Shirt", "Snake", "Giraffe"],
+            correctAnswer: "Bottle"
         },
         {
-            question: "I am a number. If you add 7 to me, you get 30. What number am I?",
-            answers: ["23", "24", "25", "26"],
-            correctAnswer: "23"
+            question: "What has one eye but can't see?",
+            answers: ["Needle", "Cyclops", "Potato", "Cyclops"],
+            correctAnswer: "Needle"
         },
         {
-            question: "If you have 10 apples and you take away 4, how many do you have?",
-            answers: ["4 apples", "6 apples", "10 apples", "None"],
-            correctAnswer: "10 apples"
+            question: "What has a thumb and four fingers but is not alive?",
+            answers: ["Glove", "Hand", "Mitten", "Sculpture"],
+            correctAnswer: "Glove"
         },
         {
-            question: "What is the result of multiplying all the numbers on a telephone's number pad?",
-            answers: ["0", "1", "10", "100"],
-            correctAnswer: "0"
+            question: "What belongs to you, but other people use it more than you?",
+            answers: ["Your name", "Your house", "Your clothes", "Your money"],
+            correctAnswer: "Your name"
         },
         {
-            question: "If 5 cats can catch 5 mice in 5 minutes, how many cats would it take to catch 100 mice in 100 minutes?",
-            answers: ["100 cats", "1 cat", "5 cats", "10 cats"],
-            correctAnswer: "5 cats"
+            question: "What travels around the world but stays in one spot?",
+            answers: ["Stamp", "Airplane", "Sun", "Postcard"],
+            correctAnswer: "Stamp"
         },
         {
-            question: "What number comes next in the sequence: 2, 4, 8, 16, ___?",
-            answers: ["32", "24", "64", "10"],
-            correctAnswer: "32"
+            question: "What can be cracked, made, told, and played?",
+            answers: ["Joke", "Egg", "Code", "Song"],
+            correctAnswer: "Joke"
         },
         {
-            question: "If you have a bowl with six apples and you take away four, how many do you have?",
-            answers: ["4 apples", "6 apples", "2 apples", "None"],
-            correctAnswer: "4 apples"
+            question: "What goes up but never comes down?",
+            answers: ["Age", "Mountain", "Ladder", "Balloon"],
+            correctAnswer: "Age"
+        },
+        {
+            question: "What has keys but can't open locks?",
+            answers: ["Keyboard", "Piano", "Map", "Calculator"],
+            correctAnswer: "Piano"
+        },
+        {
+            question: "What has many keys but can't open a single lock?",
+            answers: ["Piano", "Keyboard", "Typewriter", "Xylophone"],
+            correctAnswer: "Piano"
+        },
+        {
+            question: "What can travel around the world while staying in a corner?",
+            answers: ["Stamp", "Postcard", "Globe", "Airplane"],
+            correctAnswer: "Stamp"
+        },
+        {
+            question: "What gets wetter as it dries?",
+            answers: ["Towel", "Paper", "Cloth", "Sponge"],
+            correctAnswer: "Towel"
+        },
+        {
+            question: "What is black when you buy it, red when you use it, and gray when you throw it away?",
+            answers: ["Charcoal", "Matchstick", "Coal", "Fire"],
+            correctAnswer: "Charcoal"
+        },
+        {
+            question: "The more you take, the more you leave behind. What am I?",
+            answers: ["Footsteps", "Time", "Breath", "Memories"],
+            correctAnswer: "Footsteps"
+        },
+        {
+            question: "What gets bigger when more is taken away?",
+            answers: ["Hole", "Debt", "Problem", "Balloons"],
+            correctAnswer: "Hole"
+        },
+        {
+            question: "What is always in front of you but can't be seen?",
+            answers: ["Future", "Past", "Air", "Tomorrow"],
+            correctAnswer: "Future"
+        },
+        {
+            question: "What has a neck but no head?",
+            answers: ["Bottle", "Shirt", "Snake", "Giraffe"],
+            correctAnswer: "Bottle"
+        },
+        {
+            question: "What can you catch but not throw?",
+            answers: ["Cold", "Yawn", "Dream", "Ball"],
+            correctAnswer: "Cold"
+        },
+        {
+            question: "What has keys but can't open locks?",
+            answers: ["Keyboard", "Piano", "Map", "Calculator"],
+            correctAnswer: "Piano"
+        },
+        {
+            question: "What runs but can't walk?",
+            answers: ["Water", "Car", "River", "Clock"],
+            correctAnswer: "Clock"
+        },
+        {
+            question: "What has an eye but can't see?",
+            answers: ["Needle", "Storm", "Cyclops", "Tornado"],
+            correctAnswer: "Needle"
+        },
+        {
+            question: "What has a head, a tail, is brown, and has no legs?",
+            answers: ["Penny", "Snake", "Bear", "Dog"],
+            correctAnswer: "Penny"
+        },
+        {
+            question: "What comes once in a minute, twice in a moment, but never in a thousand years?",
+            answers: ["Letter 'M'", "Number '2'", "Vowel 'E'", "Time"],
+            correctAnswer: "Letter 'M'"
+        },
+        {
+            question: "What has a neck but no head?",
+            answers: ["Bottle", "Shirt", "Snake", "Giraffe"],
+            correctAnswer: "Bottle"
+        },
+        {
+            question: "What has one eye but can't see?",
+            answers: ["Needle", "Cyclops", "Potato", "Cyclops"],
+            correctAnswer: "Needle"
+        },
+        {
+            question: "What has a thumb and four fingers but is not alive?",
+            answers: ["Glove", "Hand", "Mitten", "Sculpture"],
+            correctAnswer: "Glove"
+        },
+        {
+            question: "What belongs to you, but other people use it more than you?",
+            answers: ["Your name", "Your house", "Your clothes", "Your money"],
+            correctAnswer: "Your name"
         }
-    ]
-
+    ];
+    
     return (
         <main>          
             <div className="relative text-center">
