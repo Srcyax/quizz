@@ -9,7 +9,7 @@ export default function Result(){
     const [result, setResult] = useState(0);
 
     useEffect(() =>{
-        axios.get("http://localhost:3000/api/answer").then((res) => {
+        axios.get("http://quizz-green.vercel.app/api/answer").then((res) => {
             console.log(res)
             setResult(res.data);
         });

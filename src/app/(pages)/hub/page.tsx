@@ -8,7 +8,7 @@ export default function Hub(){
     const [name, getName] = useState("");
 
     useEffect(() =>{
-        axios.get("http://localhost:3000/api/quizzes")
+        axios.get("http://quizz-green.vercel.app/api/quizzes")
         getName(localStorage.getItem("name") + "");
     }) 
 
