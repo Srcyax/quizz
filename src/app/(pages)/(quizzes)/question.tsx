@@ -26,7 +26,7 @@ export default function Questions({ questions }: QuestionProps) {
 
         setIsAnswering(true);
             
-        axios.post("http://quizz-green.vercel.app/api/quizzes", {
+        axios.post("/api/quizzes", {
             answered: selectedAnswer,
             answer: questions[currentQuestionIndex].correctAnswer
         }).then((res) => {
