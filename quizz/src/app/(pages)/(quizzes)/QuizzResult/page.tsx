@@ -8,13 +8,14 @@ export default function Result(){
     const router = useRouter()
     const [result, setResult] = useState(0);
 
-    const questions = 31;
-
     useEffect(() =>{
-        axios.get("http://localhost:3001/rightanswers").then((res) => {
+        axios.get("http://localhost:3000/api/answer").then((res) => {
+            console.log(res)
             setResult(res.data);
         });
     }) 
+
+    const questions = 31;
 
     return (
         <main className="flex flex-col justify-center items-center">

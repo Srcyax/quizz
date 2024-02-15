@@ -8,9 +8,7 @@ export default function Hub(){
     const [name, getName] = useState("");
 
     useEffect(() =>{
-        axios.post("http://localhost:3001/resetanswers", {
-            answers_value: 0
-        })
+        axios.get("http://localhost:3000/api/quizzes")
         getName(localStorage.getItem("name") + "");
     }) 
 

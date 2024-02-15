@@ -26,14 +26,14 @@ export default function Questions({ questions }: QuestionProps) {
 
         setIsAnswering(true);
             
-        axios.post("http://localhost:3001/quizzes", {
+        axios.post("http://localhost:3000/api/quizzes", {
             answered: selectedAnswer,
             answer: questions[currentQuestionIndex].correctAnswer
         }).then((res) => {
             console.log(res.data);
             setSelectedAnswerIndex(index);
             setTimeout(() => {
-                setSelectedAnswerIndex(-1);
+                setSelectedAnswerIndex(null);
                 if (currentQuestionIndex < questions.length - 1) {
                     setCurrentQuestionIndex(currentQuestionIndex + 1);
                 } else {
@@ -41,7 +41,7 @@ export default function Questions({ questions }: QuestionProps) {
                     router.push('/QuizzResult')
                 }
                 setIsAnswering(false);
-            }, 2000)
+            }, 1)
         });
     };
 
@@ -54,7 +54,7 @@ export default function Questions({ questions }: QuestionProps) {
                     {questions[currentQuestionIndex]?.answers.map((answer, index) => (
                         <button
                             key={index}
-                            className={`bg-zinc-900 text-white w-96 p-5 hover:p-6 m-3 rounded-lg text-left transition-all duration-200 ${selectedAnswerIndex === index && questions[currentQuestionIndex].correctAnswer === answer ? 'bg-green-500' : ''} ${selectedAnswerIndex === index && questions[currentQuestionIndex].correctAnswer !== answer ? 'bg-red-500' : ''}`}
+                            className={`bg-zinc-900 text-white border-2 w-96 p-5 hover:p-6 m-3 rounded-lg text-left transition-all duration-200 ${selectedAnswerIndex === index && questions[currentQuestionIndex].correctAnswer === answer ? 'border-green-500' : ''} ${selectedAnswerIndex === index && questions[currentQuestionIndex].correctAnswer !== answer ? 'border-red-500' : ''}`}
                             onClick={() => handleAnswer(answer, index)}
                         >
                             {answer}
