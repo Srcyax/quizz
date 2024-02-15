@@ -41,7 +41,7 @@ export default function Questions({ questions }: QuestionProps) {
                     router.push('/QuizzResult')
                 }
                 setIsAnswering(false);
-            }, 1)
+            }, 2000)
         });
     };
 
