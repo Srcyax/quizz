@@ -5,9 +5,9 @@ import Link from "next/link"
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-between m-10">
-      <h1 className="text-4xl mb-24 font-sans font-bold font">Welcome to the Quizz!</h1>
-          <div className="bg-black dark:bg-zinc-900 rounded-md group flex flex-col justify-center hover:p-2 transition-all duration-200">
-              <h1 className="text-center text-white my-2 group-hover:text-lg transition-all duration-200">What is your <strong>nickname</strong>?</h1>
+      <h1 className="text-4xl mb-24 font-sans font-bold font">Welcome to the <strong className="text-cyan-500 transition-colors duration-200">Quizz</strong>!</h1>
+          <div className="bg-black dark:bg-zinc-900 rounded-md group flex flex-col justify-center hover:p-1 transition-all duration-200">
+              <h1 className="text-center text-white my-2">What is your <strong>nickname</strong>?</h1>
               <input id="name" className="bg-white text-black p-5 rounded-sm w-64 group-hover:w-60 h-6 m-5 transition-all" type="text" required placeholder="Quizz User" />
           </div>
 
