@@ -3,9 +3,23 @@
 import Questions from "../question"
 import { ArrowBigLeftDash } from 'lucide-react';
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Skeleton } from "@/components/ui/skeleton"
 
 export default function ScienceTech(){
     const router = useRouter();
+
+    const [imageLoaded, setImageLoaded] = useState({
+        backgroundImage: false
+      });
+    
+    const handleImageLoad = (imageType: string) => {
+        setImageLoaded(prevState => ({
+            ...prevState,
+            [imageType]: true
+        }));
+    };
 
     const questions = [
         {
@@ -165,11 +179,32 @@ export default function ScienceTech(){
         }
     ];
     
+    function SkeletonCard() {
+        return (
+          <div className="flex flex-col items-center gap-2">
+            <Skeleton className="h-[25px] w-[250px] rounded-sm" />
+            <Skeleton className="h-[25px] w-[300px] rounded-sm" />
+            <div className="flex flex-col items-center gap-5 m-10">
+              <Skeleton className="h-[60px] w-[370px]" />
+              <Skeleton className="h-[60px] w-[370px]" />
+              <Skeleton className="h-[60px] w-[370px]" />
+              <Skeleton className="h-[60px] w-[370px]" />
+            </div>
+          </div>
+        )
+      }
+
     return (
-        <main>          
+        <main>         
             <div className="relative text-center">
-                <Questions questions={questions}/>  
-                <img className="absolute w-screen h-screen top-0 left-auto blur-[2px] opacity-50 -z-10" src="https://png.pngtree.com/png-vector/20230214/ourmid/pngtree-technology-network-digital-diagram-geometric-dots-abstract-png-image_6600647.png" alt="" />
+                <div className="flex flex-col justify-center items-center">
+                    {
+                        !imageLoaded.backgroundImage ? <SkeletonCard/> : <Questions questions={questions}/>  
+                    }
+                </div>
+
+                <LazyLoadImage beforeLoad={ () => handleImageLoad('backgroundImage')} className="absolute w-screen h-screen top-0 left-auto blur-md opacity-50 -z-10" src="images/sciencetech.png"/>
+                
             </div>
             <div>
                 <button onClick={() => {
