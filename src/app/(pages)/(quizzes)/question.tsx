@@ -15,7 +15,6 @@ interface QuestionProps {
     bgImage: string;
 }
 
-
 export default function Questions({ questions, bgImage }: QuestionProps) {
     const router = useRouter()
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
