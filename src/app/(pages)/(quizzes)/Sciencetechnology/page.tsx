@@ -1,6 +1,5 @@
 "use client"
 import Questions from "../question"
-import { ArrowBigLeftDash } from 'lucide-react';
 import { useRouter } from "next/navigation";
 
 export default function ScienceTech(){
@@ -168,11 +167,6 @@ export default function ScienceTech(){
         <main>         
             <div className="relative text-center">
                 <Questions questions={questions} bgImage="images/sciencetech.png"/> 
-            </div>
-            <div>
-                <button onClick={() => {
-                    router.push('/hub')
-                }} className="m-5 px-6 py-3 hover:px-8 rounded-sm text-white bg-zinc-900 transition-200 duration-200"><ArrowBigLeftDash /></button>
             </div>
         </main>
     )

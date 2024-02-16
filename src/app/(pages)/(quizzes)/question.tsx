@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ArrowBigLeftDash } from 'lucide-react';
 import axios from "axios";
 import { useRouter } from "next/navigation"
 import { Skeleton } from "@/components/ui/skeleton"
@@ -98,6 +99,13 @@ export default function Questions({ questions, bgImage }: QuestionProps) {
                     ))}
                 </div>
             )}
+            <div className="flex flex-row bottom-96">
+                <button onClick={() => {
+                        router.push('/hub')
+                    }} className="m-5 px-6 py-3 hover:px-8 rounded-sm text-white bg-zinc-900 transition-200 duration-200"><ArrowBigLeftDash />
+                </button>
+            </div>
+            
         </main>
     );
 }

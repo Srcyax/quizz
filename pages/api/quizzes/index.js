@@ -11,8 +11,7 @@ export default function handler(req, res) {
             break;
         case "POST":
             if (answered === answer) {
-                correct_answer += 1;
-                
+                correct_answer += 1;   
             }
             res.status(200).json({ correctAnswerCount: correct_answer });
             break;
