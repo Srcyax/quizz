@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation"
+import { Skeleton } from "@/components/ui/skeleton"
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 interface Question {
     question: string;
@@ -10,14 +12,26 @@ interface Question {
 
 interface QuestionProps {
     questions: Question[];
+    bgImage: string;
 }
 
 
-export default function Questions({ questions }: QuestionProps) {
+export default function Questions({ questions, bgImage }: QuestionProps) {
     const router = useRouter()
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<null | number>(null);
     const [isAnswering, setIsAnswering] = useState(false);
+
+    const [imageLoaded, setImageLoaded] = useState({
+        backgroundImage: false
+      });
+    
+    const handleImageLoad = (imageType: string) => {
+        setImageLoaded(prevState => ({
+            ...prevState,
+            [imageType]: true
+        }));
+    };
 
     const handleAnswer = (selectedAnswer: string, index: number) => {
         if (isAnswering){
@@ -45,9 +59,31 @@ export default function Questions({ questions }: QuestionProps) {
         });
     };
 
+    function SkeletonCard() {
+        return (
+          <div className="flex flex-col items-center gap-2">
+            <Skeleton className="h-[25px] w-[250px] rounded-sm" />
+            <Skeleton className="h-[25px] w-[300px] rounded-sm" />
+            <div className="flex flex-col items-center gap-5 m-10">
+              <Skeleton className="h-[60px] w-[370px]" />
+              <Skeleton className="h-[60px] w-[370px]" />
+              <Skeleton className="h-[60px] w-[370px]" />
+              <Skeleton className="h-[60px] w-[370px]" />
+            </div>
+          </div>
+        )
+      }
+
     return (
         <main>
-            {currentQuestionIndex < questions.length && (
+            <div className="relative text-center">
+                {
+                    !imageLoaded.backgroundImage ? <SkeletonCard/> : null
+                }
+                <LazyLoadImage beforeLoad={ () => handleImageLoad('backgroundImage')} className="absolute w-screen h-screen top-0 left-auto blur-sm opacity-50 -z-10" src={bgImage}/>
+            </div>
+            {
+            imageLoaded.backgroundImage && currentQuestionIndex < questions.length &&  (
                 <div className="flex flex-col justify-center items-center">
                     <p className="text-gray-400 text-[10px]">{currentQuestionIndex + 1 + "/" + questions.length}</p>
                     <h1 className="text-3xl text-center w-3/4 mt-3 mb-11">{questions[currentQuestionIndex]?.question}</h1>

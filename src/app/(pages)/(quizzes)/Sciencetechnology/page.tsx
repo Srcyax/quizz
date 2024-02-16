@@ -1,25 +1,10 @@
 "use client"
-
 import Questions from "../question"
 import { ArrowBigLeftDash } from 'lucide-react';
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { Skeleton } from "@/components/ui/skeleton"
 
 export default function ScienceTech(){
     const router = useRouter();
-
-    const [imageLoaded, setImageLoaded] = useState({
-        backgroundImage: false
-      });
-    
-    const handleImageLoad = (imageType: string) => {
-        setImageLoaded(prevState => ({
-            ...prevState,
-            [imageType]: true
-        }));
-    };
 
     const questions = [
         {
@@ -178,33 +163,11 @@ export default function ScienceTech(){
             correctAnswer: "Antoine Lavoisier"
         }
     ];
-    
-    function SkeletonCard() {
-        return (
-          <div className="flex flex-col items-center gap-2">
-            <Skeleton className="h-[25px] w-[250px] rounded-sm" />
-            <Skeleton className="h-[25px] w-[300px] rounded-sm" />
-            <div className="flex flex-col items-center gap-5 m-10">
-              <Skeleton className="h-[60px] w-[370px]" />
-              <Skeleton className="h-[60px] w-[370px]" />
-              <Skeleton className="h-[60px] w-[370px]" />
-              <Skeleton className="h-[60px] w-[370px]" />
-            </div>
-          </div>
-        )
-      }
 
     return (
         <main>         
             <div className="relative text-center">
-                <div className="flex flex-col justify-center items-center">
-                    {
-                        !imageLoaded.backgroundImage ? <SkeletonCard/> : <Questions questions={questions}/>  
-                    }
-                </div>
-
-                <LazyLoadImage beforeLoad={ () => handleImageLoad('backgroundImage')} className="absolute w-screen h-screen top-0 left-auto blur-md opacity-50 -z-10" src="images/sciencetech.png"/>
-                
+                <Questions questions={questions} bgImage="images/sciencetech.png"/> 
             </div>
             <div>
                 <button onClick={() => {
