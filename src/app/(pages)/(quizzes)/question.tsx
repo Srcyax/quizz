@@ -23,16 +23,11 @@ export default function Questions({ questions, bgImage }: QuestionProps) {
     const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<null | number>(null);
     const [isAnswering, setIsAnswering] = useState(false);
 
-    const [imageLoaded, setImageLoaded] = useState({
-        backgroundImage: false
-      });
-    
-    const handleImageLoad = (imageType: string) => {
-        setImageLoaded(prevState => ({
-            ...prevState,
-            [imageType]: true
-        }));
-    };
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    const handleImageLoad = () => {
+        setImageLoaded(true)
+    }
 
     const handleAnswer = (selectedAnswer: string, index: number) => {
         if (isAnswering){
@@ -79,12 +74,12 @@ export default function Questions({ questions, bgImage }: QuestionProps) {
         <main>
             <div className="relative text-center">
                 {
-                    !imageLoaded.backgroundImage ? <SkeletonCard/> : null
+                    !imageLoaded ? <SkeletonCard/> : null
                 }
-                <LazyLoadImage beforeLoad={ () => handleImageLoad('backgroundImage')} className="absolute w-screen h-screen top-0 left-auto blur-sm opacity-50 -z-10" src={bgImage}/>
+                <LazyLoadImage beforeLoad={ () => handleImageLoad()} className="absolute w-screen h-screen top-0 left-auto blur-sm opacity-50 -z-10" src={bgImage}/>
             </div>
             {
-            imageLoaded.backgroundImage && currentQuestionIndex < questions.length &&  (
+            imageLoaded && currentQuestionIndex < questions.length &&  (
                 <div className="flex flex-col justify-center items-center">
                     <p className="text-gray-400 text-[10px]">{currentQuestionIndex + 1 + "/" + questions.length}</p>
                     <h1 className="text-3xl text-center w-3/4 mt-3 mb-11">{questions[currentQuestionIndex]?.question}</h1>
