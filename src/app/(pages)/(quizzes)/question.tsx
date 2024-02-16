@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 import { Skeleton } from "@/components/ui/skeleton"
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
+
 interface Question {
     question: string;
     answers: string[];
