@@ -58,7 +58,6 @@ export default function Questions({ questions, bgImage }: QuestionProps) {
     function SkeletonCard() {
         return (
           <div className="flex flex-col items-center gap-2">
-            <Skeleton className="h-[25px] w-[250px] rounded-sm" />
             <Skeleton className="h-[25px] w-[300px] rounded-sm" />
             <div className="flex flex-col items-center gap-5 m-10">
               <Skeleton className="h-[60px] w-[370px]" />
