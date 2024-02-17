@@ -2,15 +2,23 @@
 
 import { useEffect, useState } from "react"
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import QuizzCard from "./quizzCard";
 
 export default function Hub(){
+    const router = useRouter(); 
     const [name, getName] = useState("");
 
-    useEffect(() =>{
+    useEffect(() =>{           
+        if (localStorage.getItem("name") === null){
+            router.push("/");
+            return;
+        }
+
         axios.get("/api/quizzes")
         getName(localStorage.getItem("name") + "");
     }) 
+
 
     return (
         <main className="flex flex-col items-center justify-between">

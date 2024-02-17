@@ -5,7 +5,12 @@ import { useRouter } from "next/navigation"
 import axios from "axios";
 
 export default function Result(){
-    const router = useRouter()
+    const router = useRouter();
+
+    if (localStorage.getItem("name") === null){
+        router.push("/");
+    }
+    
     const [result, setResult] = useState(0);
 
     useEffect(() =>{

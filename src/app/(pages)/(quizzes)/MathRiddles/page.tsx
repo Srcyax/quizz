@@ -5,6 +5,10 @@ import { useRouter } from "next/navigation";
 export default function Math(){
     const router = useRouter();
 
+    if (localStorage.getItem("name") === null){
+        router.push("/");
+    }
+    
     const questions = [
         {
             question: "If you have three oranges and you take away two, how many will you have?",

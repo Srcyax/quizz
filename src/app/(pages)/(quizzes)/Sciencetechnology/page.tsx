@@ -5,6 +5,10 @@ import { useRouter } from "next/navigation";
 export default function ScienceTech(){
     const router = useRouter();
 
+    if (localStorage.getItem("name") === null){
+        router.push("/");
+    }
+
     const questions = [
         {
             question: "Who is credited with discovering penicillin?",
