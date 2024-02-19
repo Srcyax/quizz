@@ -1,13 +1,16 @@
 "use client"
 import Questions from "../question"
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Capitals(){
     const router = useRouter();
 
-    if (localStorage.getItem("name") === null){
-        router.push("/");
-    }
+    useEffect(() => {
+        if (localStorage.getItem("name") === null){
+            router.push("/");
+        }
+    })
 
     const questions = [
         {
